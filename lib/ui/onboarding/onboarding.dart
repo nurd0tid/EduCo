@@ -41,7 +41,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
       body: SafeArea(
         child: Container(
           margin: EdgeInsets.only(
-            top: Dimensions.height30 * 2, 
+            top: Dimensions.height20 * 2, 
             bottom: Dimensions.height30 * 2,
             left: Dimensions.width20,
             right: Dimensions.width20,
