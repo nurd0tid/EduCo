@@ -1,6 +1,8 @@
 # EduCo - Online Learning
 
-This project is a starting point for a Flutter application, and build with scheme dimensions structure responsive layout
+This project slicing UI/UX Moboile is a starting point for a Flutter application, and build with scheme dimensions structure responsive layout
+
+Credit UI/UX [UI8.net](https://ui8.net/pixel-navy-agency/products/educo-e-learning-app-ui-kit).
 
 ## Geting Started
 
