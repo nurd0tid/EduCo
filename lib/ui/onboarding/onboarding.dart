@@ -234,7 +234,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(
-          color: _currentPage == index ? Colors.black : Colors.transparent, // Atur warna border
+          color: _currentPage == index ? Color(0xFF265AE8) : Colors.transparent, // Atur warna border
           width: 2.0, // Atur lebar border
         ),
         color: _currentPage == index ? Colors.transparent : const Color(0xFF9FA3A9), // Atur warna fill

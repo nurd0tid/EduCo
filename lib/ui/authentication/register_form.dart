@@ -61,7 +61,7 @@ class RegisterFormPage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: Dimensions.width10 - 2),
                     child: TextField(
                       decoration: InputDecoration(
-                        hintText: 'User name',
+                        hintText: 'Username',
                         border: InputBorder.none,
                           hintStyle: GoogleFonts.getFont(
                           'Plus Jakarta Sans',
@@ -91,7 +91,7 @@ class RegisterFormPage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: Dimensions.width10 - 2),
                     child: TextField(
                       decoration: InputDecoration(
-                        hintText: 'Email Address',
+                        hintText: 'Email address',
                         border: InputBorder.none,
                           hintStyle: GoogleFonts.getFont(
                           'Plus Jakarta Sans',
@@ -142,7 +142,7 @@ class RegisterFormPage extends StatelessWidget {
                           child: TextField(
                             obscureText: true, // Menyembunyikan teks password
                             decoration: InputDecoration(
-                              hintText: 'Your Password',
+                              hintText: 'Your password',
                               border: InputBorder.none,
                                 hintStyle: GoogleFonts.getFont(
                                 'Plus Jakarta Sans',
@@ -207,7 +207,7 @@ class RegisterFormPage extends StatelessWidget {
                           child: TextField(
                             obscureText: true, // Menyembunyikan teks password
                             decoration: InputDecoration(
-                              hintText: 'Confirm Password',
+                              hintText: 'Confirm password',
                               border: InputBorder.none,
                               hintStyle: GoogleFonts.getFont(
                                 'Plus Jakarta Sans',

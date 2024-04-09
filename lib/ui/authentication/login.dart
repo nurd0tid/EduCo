@@ -1,4 +1,6 @@
+import 'package:educo/ui/authentication/forgot_password.dart';
 import 'package:educo/utils/dimensions.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -145,7 +147,7 @@ class LoginPage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: Dimensions.width10 - 2),
                     child: TextField(
                       decoration: InputDecoration(
-                        hintText: 'User name',
+                        hintText: 'Username',
                         border: InputBorder.none,
                         hintStyle: GoogleFonts.getFont(
                           'Plus Jakarta Sans',
@@ -179,7 +181,7 @@ class LoginPage extends StatelessWidget {
                           child: TextField(
                             obscureText: true, // Menyembunyikan teks password
                             decoration: InputDecoration(
-                              hintText: '*************',
+                              hintText: 'Password',
                               border: InputBorder.none,
                               hintStyle: GoogleFonts.getFont(
                                 'Plus Jakarta Sans',
@@ -249,13 +251,21 @@ class LoginPage extends StatelessWidget {
                 SizedBox(
                   height: Dimensions.height20,
                 ),
-                Text(
-                  'Forgot password',
-                  style: GoogleFonts.getFont(
-                    'Plus Jakarta Sans',
-                    fontSize: Dimensions.font16,
-                    color: Color(0xFF265AE8),
-                    fontWeight: FontWeight.w600,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+                    );
+                  },
+                  child: Text(
+                    'Forgot password',
+                    style: GoogleFonts.getFont(
+                      'Plus Jakarta Sans',
+                      fontSize: Dimensions.font16,
+                      color: Color(0xFF265AE8),
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 )
               ],
