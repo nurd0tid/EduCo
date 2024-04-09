@@ -21,3 +21,11 @@ flutter run
 
 2. ##### Forgot Password
 ![image](https://github.com/nurd0tid/EduCo/assets/48532204/17295771-77ec-4962-8e14-80bee23c24a4)
+
+
+For a complete design preview, and how i can create it, you can see it here :
+
+#### 1. [Part 1]()
+#### 2. Comming  Soon
+
+i hope you enjoy seeing it, don't  forget to subscribe, and follow my github 😁
