@@ -1,7 +1,9 @@
 import 'package:educo/ui/authentication/forgot_password.dart';
+import 'package:educo/ui/home/home.dart';
 import 'package:educo/utils/dimensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
@@ -225,25 +227,33 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: Dimensions.height30 * 2.5),
-                Container(
-                  width: Dimensions.width10 * 48,
-                  height: Dimensions.height30 * 2,
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(6),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                    );
+                  },
+                  child: Container(
+                    width: Dimensions.width10 * 48,
+                    height: Dimensions.height30 * 2,
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(6),
+                      ),
+                      color: Color(0xFF265AE8),
                     ),
-                    color: Color(0xFF265AE8),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(Dimensions.width16),
-                    child: Text(
-                      'Login',
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.getFont(
-                        'Plus Jakarta Sans',
-                        fontSize: Dimensions.font16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
+                    child: Padding(
+                      padding: EdgeInsets.all(Dimensions.width16),
+                      child: Text(
+                        'Login',
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.getFont(
+                          'Plus Jakarta Sans',
+                          fontSize: Dimensions.font16,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ),
                   ),
