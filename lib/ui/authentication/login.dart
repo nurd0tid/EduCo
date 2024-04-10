@@ -1,5 +1,6 @@
 import 'package:educo/ui/authentication/forgot_password.dart';
 import 'package:educo/ui/home/home.dart';
+import 'package:educo/ui/main_screen.dart';
 import 'package:educo/utils/dimensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -231,7 +232,7 @@ class LoginPage extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomePage()),
+                      MaterialPageRoute(builder: (context) => MainScreenPage()),
                     );
                   },
                   child: Container(
