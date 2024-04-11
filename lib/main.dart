@@ -1,5 +1,7 @@
 import 'package:educo/ui/authentication/reset_password.dart';
+import 'package:educo/ui/main_screen.dart';
 import 'package:educo/ui/onboarding/onboarding.dart';
+import 'package:educo/ui/search/search.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const OnboardingPage(),
+      home: OnboardingPage(),
     );
   }
 }

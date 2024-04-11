@@ -212,50 +212,51 @@ class HomePage extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return GridTile(
                               child: Container(
-                            child: Column(
-                              children: [
-                                Stack(
-                                  children: [
-                                    Container(
-                                      height: Dimensions.height10 * 16,
-                                      width: Dimensions.width10 * 48,
-                                      decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(12),
-                                          image: DecorationImage(
-                                              image: AssetImage(categories[index]['imagePaths']), fit: BoxFit.cover)),
-                                    ),
-                                    Container(
-                                      height: Dimensions.height10 * 16,
-                                      width: Dimensions.width10 * 48,
-                                      decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(12),
-                                          gradient: LinearGradient(
-                                              begin: Alignment.bottomCenter,
-                                              end: Alignment.topCenter,
-                                              colors: [Colors.black.withOpacity(0.9), Colors.transparent])),
-                                    ),
-                                    Positioned(
-                                      bottom: Dimensions.height10,
-                                      left: Dimensions.width10,
-                                      right: Dimensions.width10,
-                                      child: Text(
-                                        categories[index]['title'],
-                                        textAlign: TextAlign.center,
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: GoogleFonts.getFont(
-                                          'Plus Jakarta Sans',
-                                          fontSize: Dimensions.font16 + 2,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w700,
+                              child: Column(
+                                children: [
+                                  Stack(
+                                    children: [
+                                      Container(
+                                        height: Dimensions.height10 * 16,
+                                        width: Dimensions.width10 * 48,
+                                        decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(12),
+                                            image: DecorationImage(
+                                                image: AssetImage(categories[index]['imagePaths']), fit: BoxFit.cover)),
+                                      ),
+                                      Container(
+                                        height: Dimensions.height10 * 16,
+                                        width: Dimensions.width10 * 48,
+                                        decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(12),
+                                            gradient: LinearGradient(
+                                                begin: Alignment.bottomCenter,
+                                                end: Alignment.topCenter,
+                                                colors: [Colors.black.withOpacity(0.9), Colors.transparent])),
+                                      ),
+                                      Positioned(
+                                        bottom: Dimensions.height10,
+                                        left: Dimensions.width10,
+                                        right: Dimensions.width10,
+                                        child: Text(
+                                          categories[index]['title'],
+                                          textAlign: TextAlign.center,
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: GoogleFonts.getFont(
+                                            'Plus Jakarta Sans',
+                                            fontSize: Dimensions.font16 + 2,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w700,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ],
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
-                          ));
+                          );
                         },
                       ),
                     ),
