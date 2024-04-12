@@ -72,7 +72,7 @@ class _MainScreenPageState extends State<MainScreenPage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(
-                                  IconsaxOutline.home,
+                                  _selectedIndex == 0 ? IconsaxBold.home_1 : IconsaxOutline.home,
                                   color: _selectedIndex == 0 ? Colors.white : Color(0xFF70747E),
                                 ),
                               ],
@@ -154,7 +154,7 @@ class _MainScreenPageState extends State<MainScreenPage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(
-                                  IconsaxOutline.archive_1,
+                                  _selectedIndex == 2 ? IconsaxBold.archive_1 : IconsaxOutline.archive_1,
                                   color: _selectedIndex == 2 ? Colors.white : Color(0xFF70747E),
                                 ),
                               ],
@@ -195,7 +195,7 @@ class _MainScreenPageState extends State<MainScreenPage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(
-                                  IconsaxOutline.user,
+                                  _selectedIndex == 3 ? IconsaxBold.user : IconsaxOutline.user,
                                   color: _selectedIndex == 3 ? Colors.white : Color(0xFF70747E),
                                 ),
                               ],

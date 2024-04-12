@@ -1,3 +1,4 @@
+import 'package:educo/ui/search/search_result.dart';
 import 'package:educo/utils/dimensions.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
@@ -67,6 +68,20 @@ class _SearchPageState extends State<SearchPage> {
     }
   ];
 
+  TextEditingController _controller = TextEditingController();
+
+  void _search() {
+    String query = _controller.text.trim();
+    if (query.isNotEmpty) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => SearchResultPage(query: query),
+        ),
+      );
+    }
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,19 +100,24 @@ class _SearchPageState extends State<SearchPage> {
                 height: Dimensions.height30 * 2,
                 child: Container(
                   child: TextField(
+                    controller: _controller,
                     maxLines: 1,
+                    onSubmitted: (_) => _search,
                     decoration: InputDecoration(
                         filled: true,
                         fillColor: Color(0xFFFFF1F3),
-                        hintText: 'Graphic Illustration',
+                        hintText: 'Type something...',
                         enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xFFFFF1F3))),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide.none,
                         ),
-                        suffixIcon: Icon(
-                          EvaIcons.searchOutline,
-                          size: Dimensions.font26 + 2,
-                          color: Color(0xFF888C94).withOpacity(0.8),
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            EvaIcons.searchOutline,
+                            size: Dimensions.font26 + 2,
+                            color: Color(0xFF888C94).withOpacity(0.8),
+                          ),
+                          onPressed: _search,
                         )),
                     style: GoogleFonts.getFont(
                       'Plus Jakarta Sans',
@@ -134,7 +154,7 @@ class _SearchPageState extends State<SearchPage> {
                           spacing: Dimensions.width10,
                           runSpacing: Dimensions.height10,
                           children: List.generate(
-                            topSearch.length, 
+                            topSearch.length,
                             (index) => Container(
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(4),

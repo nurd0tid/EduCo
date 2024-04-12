@@ -1,3 +1,4 @@
+import 'package:educo/ui/teacher/top_teacher.dart';
 import 'package:educo/utils/dimensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -135,7 +136,7 @@ class HomePage extends StatelessWidget {
                   decoration: InputDecoration(
                       filled: true,
                       fillColor: Color(0xFFFFF1F3),
-                      hintText: 'Graphic Illustration',
+                      hintText: 'Type something...',
                       enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xFFFFF1F3))),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide.none,
@@ -470,15 +471,23 @@ class HomePage extends StatelessWidget {
                         SizedBox(
                           width: Dimensions.width20 * 4,
                         ),
-                        Container(
-                          margin: EdgeInsets.only(top: Dimensions.height30),
-                          child: Text(
-                            'see more',
-                            style: GoogleFonts.getFont(
-                              'Plus Jakarta Sans',
-                              fontSize: Dimensions.font14,
-                              color: Color(0xFF70747E),
-                              fontWeight: FontWeight.w400,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => TopTeacherPage()),
+                            );
+                          },
+                          child: Container(
+                            margin: EdgeInsets.only(top: Dimensions.height30),
+                            child: Text(
+                              'see more',
+                              style: GoogleFonts.getFont(
+                                'Plus Jakarta Sans',
+                                fontSize: Dimensions.font14,
+                                color: Color(0xFF70747E),
+                                fontWeight: FontWeight.w400,
+                              ),
                             ),
                           ),
                         ),

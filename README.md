@@ -28,5 +28,7 @@ For a complete design preview, and how i can create it, you can see it here :
 #### 1. [Part 1](https://www.youtube.com/watch?v=05pp4_nf7tE)
 #### 2. [Part 2](https://youtube.com/live/w0GkS9uB1-A)
 #### 3. [Part 3](https://youtube.com/live/smJclMEF2Is)
+#### 4. [Part 4](https://www.youtube.com/live/oI0kxxEDyKA)
+#### 5. Comming Soon
 
 i hope you enjoy seeing it, don't  forget to subscribe, and follow my github 😁

@@ -2,6 +2,9 @@ import 'package:educo/ui/authentication/reset_password.dart';
 import 'package:educo/ui/main_screen.dart';
 import 'package:educo/ui/onboarding/onboarding.dart';
 import 'package:educo/ui/search/search.dart';
+import 'package:educo/ui/search/search_result.dart';
+import 'package:educo/ui/search/search_result_filter.dart';
+import 'package:educo/ui/teacher/top_teacher.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
