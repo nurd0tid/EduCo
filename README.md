@@ -29,6 +29,6 @@ For a complete design preview, and how i can create it, you can see it here :
 #### 2. [Part 2](https://youtube.com/live/w0GkS9uB1-A)
 #### 3. [Part 3](https://youtube.com/live/smJclMEF2Is)
 #### 4. [Part 4](https://www.youtube.com/live/oI0kxxEDyKA)
-#### 5. Comming Soon
+#### 5. [Part 5](https://youtube.com/live/OSYzQQBfmNg)
 
 i hope you enjoy seeing it, don't  forget to subscribe, and follow my github 😁

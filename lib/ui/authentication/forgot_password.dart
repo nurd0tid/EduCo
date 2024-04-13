@@ -15,8 +15,8 @@ class ForgotPasswordPage extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         child: Container(
           margin: EdgeInsets.only(
-            top: Dimensions.height50,
-            bottom: Dimensions.height50,
+            top: Dimensions.height30,
+            bottom: Dimensions.height30,
             left: Dimensions.width20,
             right: Dimensions.width20,
           ),

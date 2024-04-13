@@ -2,17 +2,17 @@ import 'package:educo/utils/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class RegisterFormPage extends StatelessWidget {
-  const RegisterFormPage({super.key});
+class PasswordChangePage extends StatelessWidget {
+  const PasswordChangePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
-            child: Container(
-              margin: EdgeInsets.only(
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Container(
+            margin: EdgeInsets.only(
               top: Dimensions.height30,
               bottom: Dimensions.height30,
               left: Dimensions.width20,
@@ -33,7 +33,7 @@ class RegisterFormPage extends StatelessWidget {
                 ),
                 Container(
                   child: Text(
-                    'Enter your details',
+                    'Profile Settings',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.getFont(
                       'Plus Jakarta Sans',
@@ -44,84 +44,7 @@ class RegisterFormPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: Dimensions.height30 * 2,
-                ),
-                Container(
-                  width: Dimensions.width10 * 48,
-                  height: Dimensions.height45 - 2,
-                  decoration: BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(
-                        color: Color(0xFFCFD1D4),
-                        width: 1.0,
-                      ),
-                    ),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: Dimensions.width10 - 2),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Username',
-                        border: InputBorder.none,
-                          hintStyle: GoogleFonts.getFont(
-                          'Plus Jakarta Sans',
-                          fontSize: Dimensions.font16 + 2,
-                          color: Color(0xFF70747E),
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: Dimensions.height30,
-                ),
-                Container(
-                  width: Dimensions.width10 * 48,
-                  height: Dimensions.height45 - 2,
-                  decoration: BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(
-                        color: Color(0xFFCFD1D4),
-                        width: 1.0,
-                      ),
-                    ),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: Dimensions.width10 - 2),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Email address',
-                        border: InputBorder.none,
-                          hintStyle: GoogleFonts.getFont(
-                          'Plus Jakarta Sans',
-                          fontSize: Dimensions.font16 + 2,
-                          color: Color(0xFF70747E),
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: Dimensions.height10,
-                ),
-                Container(
-                  child: Align(
-                    alignment: Alignment.centerLeft, // Mengatur teks menjadi rata kiri
-                    child: Text(
-                      'Please enter valid email',
-                      style: GoogleFonts.getFont(
-                        'Plus Jakarta Sans',
-                        fontSize: Dimensions.font12,
-                        color: Color(0xFFF04438),
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: Dimensions.height30,
+                  height: Dimensions.height50,
                 ),
                 Container(
                   width: Dimensions.width10 * 48,
@@ -137,19 +60,16 @@ class RegisterFormPage extends StatelessWidget {
                   child: Row(
                     children: [
                       Expanded(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: Dimensions.width10 - 2),
-                          child: TextField(
-                            obscureText: true, // Menyembunyikan teks password
-                            decoration: InputDecoration(
-                              hintText: 'Your password',
-                              border: InputBorder.none,
-                                hintStyle: GoogleFonts.getFont(
-                                'Plus Jakarta Sans',
-                                fontSize: Dimensions.font16 + 2,
-                                color: Color(0xFF70747E),
-                                fontWeight: FontWeight.w400,
-                              ),
+                        child: TextField(
+                          obscureText: true, // Menyembunyikan teks password
+                          decoration: InputDecoration(
+                            hintText: 'Enter old password',
+                            border: InputBorder.none,
+                            hintStyle: GoogleFonts.getFont(
+                              'Plus Jakarta Sans',
+                              fontSize: Dimensions.font16 + 2,
+                              color: Color(0xFF70747E),
+                              fontWeight: FontWeight.w400,
                             ),
                           ),
                         ),
@@ -175,7 +95,7 @@ class RegisterFormPage extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.centerLeft, // Mengatur teks menjadi rata kiri
                     child: Text(
-                      'Must containt 8 character',
+                      'Does not match with old password',
                       style: GoogleFonts.getFont(
                         'Plus Jakarta Sans',
                         fontSize: Dimensions.font12,
@@ -202,19 +122,64 @@ class RegisterFormPage extends StatelessWidget {
                   child: Row(
                     children: [
                       Expanded(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: Dimensions.width10 - 2),
-                          child: TextField(
-                            obscureText: true, // Menyembunyikan teks password
-                            decoration: InputDecoration(
-                              hintText: 'Confirm password',
-                              border: InputBorder.none,
-                              hintStyle: GoogleFonts.getFont(
-                                'Plus Jakarta Sans',
-                                fontSize: Dimensions.font16 + 2,
-                                color: Color(0xFF70747E),
-                                fontWeight: FontWeight.w400,
-                              ),
+                        child: TextField(
+                          obscureText: true, // Menyembunyikan teks password
+                          decoration: InputDecoration(
+                            hintText: 'Enter new password',
+                            border: InputBorder.none,
+                            hintStyle: GoogleFonts.getFont(
+                              'Plus Jakarta Sans',
+                              fontSize: Dimensions.font16 + 2,
+                              color: Color(0xFF70747E),
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          Icons.visibility_outlined,
+                          color: Color(0xFF70747E),
+                          size: Dimensions.font24,
+                        ), // Ikonya berdasarkan kebutuhan Anda
+                        onPressed: () {
+                          // Tambahkan logika untuk mengubah obscureText saat ikon ditekan
+                          // Misalnya, Anda bisa menggunakan setState() untuk mengubah nilai variabel yang mengontrol obscureText
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: Dimensions.height10,
+                ),
+                SizedBox(
+                  height: Dimensions.height30,
+                ),
+                Container(
+                  width: Dimensions.width10 * 48,
+                  height: Dimensions.height45 - 2,
+                  decoration: BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color: Color(0xFFCFD1D4),
+                        width: 1.0,
+                      ),
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          obscureText: true, // Menyembunyikan teks password
+                          decoration: InputDecoration(
+                            hintText: 'Confirm password',
+                            border: InputBorder.none,
+                            hintStyle: GoogleFonts.getFont(
+                              'Plus Jakarta Sans',
+                              fontSize: Dimensions.font16 + 2,
+                              color: Color(0xFF70747E),
+                              fontWeight: FontWeight.w400,
                             ),
                           ),
                         ),
@@ -251,7 +216,7 @@ class RegisterFormPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: Dimensions.height30 * 3,
+                  height: Dimensions.height30 * 2,
                 ),
                 Container(
                   width: Dimensions.width10 * 48,
@@ -265,7 +230,7 @@ class RegisterFormPage extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.all(Dimensions.width16),
                     child: Text(
-                      'Continue',
+                      'Reset',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.getFont(
                         'Plus Jakarta Sans',
@@ -275,12 +240,12 @@ class RegisterFormPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                ), 
+                ),
               ],
             ),
-                    ),
           ),
-      )
+        ),
+      ),
     );
   }
 }
