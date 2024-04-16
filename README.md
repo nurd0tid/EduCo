@@ -30,5 +30,6 @@ For a complete design preview, and how i can create it, you can see it here :
 #### 3. [Part 3](https://youtube.com/live/smJclMEF2Is)
 #### 4. [Part 4](https://www.youtube.com/live/oI0kxxEDyKA)
 #### 5. [Part 5](https://youtube.com/live/OSYzQQBfmNg)
+#### 6. [Part 6](https://www.youtube.com/watch?v=JdByioXhWTk)
 
 i hope you enjoy seeing it, don't  forget to subscribe, and follow my github 😁
