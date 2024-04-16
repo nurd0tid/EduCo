@@ -41,6 +41,8 @@ dependencies:
   get: ^4.6.6
   eva_icons_flutter: ^3.1.0
   ficonsax: ^0.0.3
+  flick_video_player: ^0.7.0
+  video_player: ^2.8.6
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +69,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/video/
     - assets/images/categories/
     - assets/images/mostwatching/
     - assets/images/popular/

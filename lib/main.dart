@@ -1,4 +1,5 @@
 import 'package:educo/ui/authentication/reset_password.dart';
+import 'package:educo/ui/course/detail.dart';
 import 'package:educo/ui/main_screen.dart';
 import 'package:educo/ui/onboarding/onboarding.dart';
 import 'package:educo/ui/profile/profile.dart';

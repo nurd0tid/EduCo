@@ -1,3 +1,4 @@
+import 'package:educo/ui/course/detail.dart';
 import 'package:educo/ui/teacher/top_teacher.dart';
 import 'package:educo/utils/dimensions.dart';
 import 'package:flutter/cupertino.dart';
@@ -312,138 +313,146 @@ class HomePage extends StatelessWidget {
                             childAspectRatio: 0.75),
                         itemBuilder: (context, index) {
                           return GridTile(
-                            child: Container(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    width: Dimensions.width10 * 48,
-                                    height: Dimensions.height10 * 12,
-                                    child: Stack(
-                                      children: [
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(4),
-                                            image: DecorationImage(
-                                              image: AssetImage(mostWatching[index]['imagePaths']),
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ), // color: Colors.redAccent,
-                                        ),
-                                        Positioned(
-                                          child: Container(
-                                            margin: EdgeInsets.only(top: Dimensions.height10, left: Dimensions.width15),
-                                            height: Dimensions.height30,
-                                            width: Dimensions.width30 * 2,
-                                            decoration: const BoxDecoration(
-                                                color: Color(0xFFFD853A),
-                                                borderRadius: BorderRadius.all(Radius.circular(4))),
-                                            child: Container(
-                                                margin: EdgeInsets.only(
-                                                    left: Dimensions.width15,
-                                                    right: Dimensions.width15,
-                                                    top: Dimensions.width10 / 2,
-                                                    bottom: Dimensions.width10 / 2),
-                                                child: Text(
-                                                  mostWatching[index]['tags'].toUpperCase(),
-                                                  style: GoogleFonts.getFont(
-                                                    'Plus Jakarta Sans',
-                                                    fontSize: Dimensions.font12,
-                                                    color: Colors.white,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                                )),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => CourseDetailPage()),
+                                );
+                              },
+                              child: Container(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      width: Dimensions.width10 * 48,
+                                      height: Dimensions.height10 * 12,
+                                      child: Stack(
+                                        children: [
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(4),
+                                              image: DecorationImage(
+                                                image: AssetImage(mostWatching[index]['imagePaths']),
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ), // color: Colors.redAccent,
                                           ),
+                                          Positioned(
+                                            child: Container(
+                                              margin: EdgeInsets.only(top: Dimensions.height10, left: Dimensions.width15),
+                                              height: Dimensions.height30,
+                                              width: Dimensions.width30 * 2,
+                                              decoration: const BoxDecoration(
+                                                  color: Color(0xFFFD853A),
+                                                  borderRadius: BorderRadius.all(Radius.circular(4))),
+                                              child: Container(
+                                                  margin: EdgeInsets.only(
+                                                      left: Dimensions.width15,
+                                                      right: Dimensions.width15,
+                                                      top: Dimensions.width10 / 2,
+                                                      bottom: Dimensions.width10 / 2),
+                                                  child: Text(
+                                                    mostWatching[index]['tags'].toUpperCase(),
+                                                    style: GoogleFonts.getFont(
+                                                      'Plus Jakarta Sans',
+                                                      fontSize: Dimensions.font12,
+                                                      color: Colors.white,
+                                                      fontWeight: FontWeight.w600,
+                                                    ),
+                                                  )),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: Dimensions.height10,
+                                    ),
+                                    Text(
+                                      mostWatching[index]['title'],
+                                      style: GoogleFonts.getFont(
+                                        'Plus Jakarta Sans',
+                                        fontSize: Dimensions.font16,
+                                        color: Color(0xFF282F3E),
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    SizedBox(
+                                      height: Dimensions.height10 / 2,
+                                    ),
+                                    Text(
+                                      mostWatching[index]['description'],
+                                      style: GoogleFonts.getFont(
+                                        'Plus Jakarta Sans',
+                                        fontSize: Dimensions.font14,
+                                        color: Color(0xFF585D69),
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    SizedBox(
+                                      height: Dimensions.height10 / 2,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Text(
+                                              mostWatching[index]['rating'],
+                                              style: GoogleFonts.getFont(
+                                                'Plus Jakarta Sans',
+                                                fontSize: Dimensions.font12,
+                                                color: Color(0xFF888C94),
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                            SizedBox(
+                                              width: Dimensions.width10,
+                                            ),
+                                            Icon(
+                                              EvaIcons.star,
+                                              size: Dimensions.font14,
+                                              color: Color(0xFFFFA927),
+                                            ),
+                                            Icon(
+                                              EvaIcons.star,
+                                              size: Dimensions.font14,
+                                              color: Color(0xFFFFA927),
+                                            ),
+                                            Icon(
+                                              EvaIcons.star,
+                                              size: Dimensions.font14,
+                                              color: Color(0xFFFFA927),
+                                            ),
+                                            Icon(
+                                              EvaIcons.star,
+                                              size: Dimensions.font14,
+                                              color: Color(0xFFFFA927),
+                                            )
+                                          ],
+                                        ),
+                                        Text(
+                                          '(${mostWatching[index]['totalRatings']})',
+                                          style: GoogleFonts.getFont(
+                                            'Plus Jakarta Sans',
+                                            fontSize: Dimensions.font12,
+                                            color: Color(0xFF888C94),
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
                                         ),
                                       ],
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: Dimensions.height10,
-                                  ),
-                                  Text(
-                                    mostWatching[index]['title'],
-                                    style: GoogleFonts.getFont(
-                                      'Plus Jakarta Sans',
-                                      fontSize: Dimensions.font16,
-                                      color: Color(0xFF282F3E),
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                  SizedBox(
-                                    height: Dimensions.height10 / 2,
-                                  ),
-                                  Text(
-                                    mostWatching[index]['description'],
-                                    style: GoogleFonts.getFont(
-                                      'Plus Jakarta Sans',
-                                      fontSize: Dimensions.font14,
-                                      color: Color(0xFF585D69),
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                  SizedBox(
-                                    height: Dimensions.height10 / 2,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Text(
-                                            mostWatching[index]['rating'],
-                                            style: GoogleFonts.getFont(
-                                              'Plus Jakarta Sans',
-                                              fontSize: Dimensions.font12,
-                                              color: Color(0xFF888C94),
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                            maxLines: 1,
-                                            overflow: TextOverflow.ellipsis,
-                                          ),
-                                          SizedBox(
-                                            width: Dimensions.width10,
-                                          ),
-                                          Icon(
-                                            EvaIcons.star,
-                                            size: Dimensions.font14,
-                                            color: Color(0xFFFFA927),
-                                          ),
-                                          Icon(
-                                            EvaIcons.star,
-                                            size: Dimensions.font14,
-                                            color: Color(0xFFFFA927),
-                                          ),
-                                          Icon(
-                                            EvaIcons.star,
-                                            size: Dimensions.font14,
-                                            color: Color(0xFFFFA927),
-                                          ),
-                                          Icon(
-                                            EvaIcons.star,
-                                            size: Dimensions.font14,
-                                            color: Color(0xFFFFA927),
-                                          )
-                                        ],
-                                      ),
-                                      Text(
-                                        '(${mostWatching[index]['totalRatings']})',
-                                        style: GoogleFonts.getFont(
-                                          'Plus Jakarta Sans',
-                                          fontSize: Dimensions.font12,
-                                          color: Color(0xFF888C94),
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           );
@@ -690,138 +699,146 @@ class HomePage extends StatelessWidget {
                             childAspectRatio: 0.75),
                         itemBuilder: (context, index) {
                           return GridTile(
-                            child: Container(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    width: Dimensions.width10 * 48,
-                                    height: Dimensions.height10 * 12,
-                                    child: Stack(
-                                      children: [
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(4),
-                                            image: DecorationImage(
-                                              image: AssetImage(cover[index]['imagePaths']),
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ), // color: Colors.redAccent,
-                                        ),
-                                        Positioned(
-                                          child: Container(
-                                            margin: EdgeInsets.only(top: Dimensions.height10, left: Dimensions.width15),
-                                            height: Dimensions.height30,
-                                            width: Dimensions.width30 * 2,
-                                            decoration: const BoxDecoration(
-                                                color: Color(0xFFFD853A),
-                                                borderRadius: BorderRadius.all(Radius.circular(4))),
-                                            child: Container(
-                                                margin: EdgeInsets.only(
-                                                    left: Dimensions.width15,
-                                                    right: Dimensions.width15,
-                                                    top: Dimensions.width10 / 2,
-                                                    bottom: Dimensions.width10 / 2),
-                                                child: Text(
-                                                  cover[index]['tags'].toUpperCase(),
-                                                  style: GoogleFonts.getFont(
-                                                    'Plus Jakarta Sans',
-                                                    fontSize: Dimensions.font12,
-                                                    color: Colors.white,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                                )),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => CourseDetailPage()),
+                                );
+                              },
+                              child: Container(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      width: Dimensions.width10 * 48,
+                                      height: Dimensions.height10 * 12,
+                                      child: Stack(
+                                        children: [
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(4),
+                                              image: DecorationImage(
+                                                image: AssetImage(cover[index]['imagePaths']),
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ), // color: Colors.redAccent,
                                           ),
+                                          Positioned(
+                                            child: Container(
+                                              margin: EdgeInsets.only(top: Dimensions.height10, left: Dimensions.width15),
+                                              height: Dimensions.height30,
+                                              width: Dimensions.width30 * 2,
+                                              decoration: const BoxDecoration(
+                                                  color: Color(0xFFFD853A),
+                                                  borderRadius: BorderRadius.all(Radius.circular(4))),
+                                              child: Container(
+                                                  margin: EdgeInsets.only(
+                                                      left: Dimensions.width15,
+                                                      right: Dimensions.width15,
+                                                      top: Dimensions.width10 / 2,
+                                                      bottom: Dimensions.width10 / 2),
+                                                  child: Text(
+                                                    cover[index]['tags'].toUpperCase(),
+                                                    style: GoogleFonts.getFont(
+                                                      'Plus Jakarta Sans',
+                                                      fontSize: Dimensions.font12,
+                                                      color: Colors.white,
+                                                      fontWeight: FontWeight.w600,
+                                                    ),
+                                                  )),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: Dimensions.height10,
+                                    ),
+                                    Text(
+                                      cover[index]['title'],
+                                      style: GoogleFonts.getFont(
+                                        'Plus Jakarta Sans',
+                                        fontSize: Dimensions.font16,
+                                        color: Color(0xFF282F3E),
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    SizedBox(
+                                      height: Dimensions.height10 / 2,
+                                    ),
+                                    Text(
+                                      mostWatching[index]['description'],
+                                      style: GoogleFonts.getFont(
+                                        'Plus Jakarta Sans',
+                                        fontSize: Dimensions.font14,
+                                        color: Color(0xFF585D69),
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    SizedBox(
+                                      height: Dimensions.height10 / 2,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Text(
+                                              cover[index]['rating'],
+                                              style: GoogleFonts.getFont(
+                                                'Plus Jakarta Sans',
+                                                fontSize: Dimensions.font12,
+                                                color: Color(0xFF888C94),
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                            SizedBox(
+                                              width: Dimensions.width10,
+                                            ),
+                                            Icon(
+                                              EvaIcons.star,
+                                              size: Dimensions.font14,
+                                              color: Color(0xFFFFA927),
+                                            ),
+                                            Icon(
+                                              EvaIcons.star,
+                                              size: Dimensions.font14,
+                                              color: Color(0xFFFFA927),
+                                            ),
+                                            Icon(
+                                              EvaIcons.star,
+                                              size: Dimensions.font14,
+                                              color: Color(0xFFFFA927),
+                                            ),
+                                            Icon(
+                                              EvaIcons.star,
+                                              size: Dimensions.font14,
+                                              color: Color(0xFFFFA927),
+                                            )
+                                          ],
+                                        ),
+                                        Text(
+                                          '(${cover[index]['totalRatings']})',
+                                          style: GoogleFonts.getFont(
+                                            'Plus Jakarta Sans',
+                                            fontSize: Dimensions.font12,
+                                            color: Color(0xFF888C94),
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
                                         ),
                                       ],
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: Dimensions.height10,
-                                  ),
-                                  Text(
-                                    cover[index]['title'],
-                                    style: GoogleFonts.getFont(
-                                      'Plus Jakarta Sans',
-                                      fontSize: Dimensions.font16,
-                                      color: Color(0xFF282F3E),
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                  SizedBox(
-                                    height: Dimensions.height10 / 2,
-                                  ),
-                                  Text(
-                                    mostWatching[index]['description'],
-                                    style: GoogleFonts.getFont(
-                                      'Plus Jakarta Sans',
-                                      fontSize: Dimensions.font14,
-                                      color: Color(0xFF585D69),
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                  SizedBox(
-                                    height: Dimensions.height10 / 2,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Text(
-                                            cover[index]['rating'],
-                                            style: GoogleFonts.getFont(
-                                              'Plus Jakarta Sans',
-                                              fontSize: Dimensions.font12,
-                                              color: Color(0xFF888C94),
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                            maxLines: 1,
-                                            overflow: TextOverflow.ellipsis,
-                                          ),
-                                          SizedBox(
-                                            width: Dimensions.width10,
-                                          ),
-                                          Icon(
-                                            EvaIcons.star,
-                                            size: Dimensions.font14,
-                                            color: Color(0xFFFFA927),
-                                          ),
-                                          Icon(
-                                            EvaIcons.star,
-                                            size: Dimensions.font14,
-                                            color: Color(0xFFFFA927),
-                                          ),
-                                          Icon(
-                                            EvaIcons.star,
-                                            size: Dimensions.font14,
-                                            color: Color(0xFFFFA927),
-                                          ),
-                                          Icon(
-                                            EvaIcons.star,
-                                            size: Dimensions.font14,
-                                            color: Color(0xFFFFA927),
-                                          )
-                                        ],
-                                      ),
-                                      Text(
-                                        '(${cover[index]['totalRatings']})',
-                                        style: GoogleFonts.getFont(
-                                          'Plus Jakarta Sans',
-                                          fontSize: Dimensions.font12,
-                                          color: Color(0xFF888C94),
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           );
@@ -879,138 +896,146 @@ class HomePage extends StatelessWidget {
                             childAspectRatio: 0.75),
                         itemBuilder: (context, index) {
                           return GridTile(
-                            child: Container(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    width: Dimensions.width10 * 48,
-                                    height: Dimensions.height10 * 12,
-                                    child: Stack(
-                                      children: [
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(4),
-                                            image: DecorationImage(
-                                              image: AssetImage(cover[index]['imagePaths']),
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ), // color: Colors.redAccent,
-                                        ),
-                                        Positioned(
-                                          child: Container(
-                                            margin: EdgeInsets.only(top: Dimensions.height10, left: Dimensions.width15),
-                                            height: Dimensions.height30,
-                                            width: Dimensions.width30 * 2,
-                                            decoration: const BoxDecoration(
-                                                color: Color(0xFFFD853A),
-                                                borderRadius: BorderRadius.all(Radius.circular(4))),
-                                            child: Container(
-                                                margin: EdgeInsets.only(
-                                                    left: Dimensions.width15,
-                                                    right: Dimensions.width15,
-                                                    top: Dimensions.width10 / 2,
-                                                    bottom: Dimensions.width10 / 2),
-                                                child: Text(
-                                                  cover[index]['tags'].toUpperCase(),
-                                                  style: GoogleFonts.getFont(
-                                                    'Plus Jakarta Sans',
-                                                    fontSize: Dimensions.font12,
-                                                    color: Colors.white,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                                )),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => CourseDetailPage()),
+                                );
+                              },
+                              child: Container(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      width: Dimensions.width10 * 48,
+                                      height: Dimensions.height10 * 12,
+                                      child: Stack(
+                                        children: [
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(4),
+                                              image: DecorationImage(
+                                                image: AssetImage(cover[index]['imagePaths']),
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ), // color: Colors.redAccent,
                                           ),
+                                          Positioned(
+                                            child: Container(
+                                              margin: EdgeInsets.only(top: Dimensions.height10, left: Dimensions.width15),
+                                              height: Dimensions.height30,
+                                              width: Dimensions.width30 * 2,
+                                              decoration: const BoxDecoration(
+                                                  color: Color(0xFFFD853A),
+                                                  borderRadius: BorderRadius.all(Radius.circular(4))),
+                                              child: Container(
+                                                  margin: EdgeInsets.only(
+                                                      left: Dimensions.width15,
+                                                      right: Dimensions.width15,
+                                                      top: Dimensions.width10 / 2,
+                                                      bottom: Dimensions.width10 / 2),
+                                                  child: Text(
+                                                    cover[index]['tags'].toUpperCase(),
+                                                    style: GoogleFonts.getFont(
+                                                      'Plus Jakarta Sans',
+                                                      fontSize: Dimensions.font12,
+                                                      color: Colors.white,
+                                                      fontWeight: FontWeight.w600,
+                                                    ),
+                                                  )),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: Dimensions.height10,
+                                    ),
+                                    Text(
+                                      cover[index]['title'],
+                                      style: GoogleFonts.getFont(
+                                        'Plus Jakarta Sans',
+                                        fontSize: Dimensions.font16,
+                                        color: Color(0xFF282F3E),
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    SizedBox(
+                                      height: Dimensions.height10 / 2,
+                                    ),
+                                    Text(
+                                      mostWatching[index]['description'],
+                                      style: GoogleFonts.getFont(
+                                        'Plus Jakarta Sans',
+                                        fontSize: Dimensions.font14,
+                                        color: Color(0xFF585D69),
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    SizedBox(
+                                      height: Dimensions.height10 / 2,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Text(
+                                              cover[index]['rating'],
+                                              style: GoogleFonts.getFont(
+                                                'Plus Jakarta Sans',
+                                                fontSize: Dimensions.font12,
+                                                color: Color(0xFF888C94),
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                            SizedBox(
+                                              width: Dimensions.width10,
+                                            ),
+                                            Icon(
+                                              EvaIcons.star,
+                                              size: Dimensions.font14,
+                                              color: Color(0xFFFFA927),
+                                            ),
+                                            Icon(
+                                              EvaIcons.star,
+                                              size: Dimensions.font14,
+                                              color: Color(0xFFFFA927),
+                                            ),
+                                            Icon(
+                                              EvaIcons.star,
+                                              size: Dimensions.font14,
+                                              color: Color(0xFFFFA927),
+                                            ),
+                                            Icon(
+                                              EvaIcons.star,
+                                              size: Dimensions.font14,
+                                              color: Color(0xFFFFA927),
+                                            )
+                                          ],
+                                        ),
+                                        Text(
+                                          '(${cover[index]['totalRatings']})',
+                                          style: GoogleFonts.getFont(
+                                            'Plus Jakarta Sans',
+                                            fontSize: Dimensions.font12,
+                                            color: Color(0xFF888C94),
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
                                         ),
                                       ],
                                     ),
-                                  ),
-                                  SizedBox(
-                                    height: Dimensions.height10,
-                                  ),
-                                  Text(
-                                    cover[index]['title'],
-                                    style: GoogleFonts.getFont(
-                                      'Plus Jakarta Sans',
-                                      fontSize: Dimensions.font16,
-                                      color: Color(0xFF282F3E),
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                  SizedBox(
-                                    height: Dimensions.height10 / 2,
-                                  ),
-                                  Text(
-                                    mostWatching[index]['description'],
-                                    style: GoogleFonts.getFont(
-                                      'Plus Jakarta Sans',
-                                      fontSize: Dimensions.font14,
-                                      color: Color(0xFF585D69),
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                  SizedBox(
-                                    height: Dimensions.height10 / 2,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Text(
-                                            cover[index]['rating'],
-                                            style: GoogleFonts.getFont(
-                                              'Plus Jakarta Sans',
-                                              fontSize: Dimensions.font12,
-                                              color: Color(0xFF888C94),
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                            maxLines: 1,
-                                            overflow: TextOverflow.ellipsis,
-                                          ),
-                                          SizedBox(
-                                            width: Dimensions.width10,
-                                          ),
-                                          Icon(
-                                            EvaIcons.star,
-                                            size: Dimensions.font14,
-                                            color: Color(0xFFFFA927),
-                                          ),
-                                          Icon(
-                                            EvaIcons.star,
-                                            size: Dimensions.font14,
-                                            color: Color(0xFFFFA927),
-                                          ),
-                                          Icon(
-                                            EvaIcons.star,
-                                            size: Dimensions.font14,
-                                            color: Color(0xFFFFA927),
-                                          ),
-                                          Icon(
-                                            EvaIcons.star,
-                                            size: Dimensions.font14,
-                                            color: Color(0xFFFFA927),
-                                          )
-                                        ],
-                                      ),
-                                      Text(
-                                        '(${cover[index]['totalRatings']})',
-                                        style: GoogleFonts.getFont(
-                                          'Plus Jakarta Sans',
-                                          fontSize: Dimensions.font12,
-                                          color: Color(0xFF888C94),
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           );
