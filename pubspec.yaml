@@ -43,6 +43,7 @@ dependencies:
   ficonsax: ^0.0.3
   flick_video_player: ^0.7.0
   video_player: ^2.8.6
+  autoscale_tabbarview: ^1.0.2
 
 dev_dependencies:
   flutter_test:
