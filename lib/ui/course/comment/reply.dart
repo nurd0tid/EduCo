@@ -105,7 +105,7 @@ class _ReplyCommentPageState extends State<ReplyCommentPage> {
                                   ),
                                   suffixIcon: Icon(
                                     IconsaxBold.send_1,
-                                    size: Dimensions.font20,
+                                    size: Dimensions.font26,
                                     color: Color(0xFF265AE8),
                                   ),
                                 ),
