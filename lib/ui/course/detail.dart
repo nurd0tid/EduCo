@@ -374,6 +374,7 @@ class _CourseDetailPageState extends State<CourseDetailPage> with SingleTickerPr
                           right: Dimensions.width20,
                         ),
                         child: AutoScaleTabBarView(
+                          physics: NeverScrollableScrollPhysics(),
                           controller: _tabController,
                           children: [
                             OverviewTabPage(),
