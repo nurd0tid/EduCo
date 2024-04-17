@@ -247,58 +247,61 @@ class OverviewTabPage extends StatelessWidget {
               margin: EdgeInsets.only(
                 bottom: Dimensions.height20,
               ),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      CircleAvatar(
-                        radius: Dimensions.width30,
-                        backgroundImage: AssetImage(feedBack[index]['imagePaths']),
-                      ),
-                      SizedBox(
-                        width: Dimensions.width10,
-                      ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              feedBack[index]['username'],
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.getFont(
-                                'Plus Jakarta Sans',
-                                fontSize: Dimensions.font14,
-                                color: Color(0xFF404653),
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            Text(
-                              feedBack[index]['time'],
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.getFont(
-                                'Plus Jakarta Sans',
-                                fontSize: Dimensions.font12,
-                                color: Color(0xFF9FA3A9),
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            Text(
-                              feedBack[index]['feedback'],
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: GoogleFonts.getFont(
-                                'Plus Jakarta Sans',
-                                fontSize: Dimensions.font14,
-                                color: Color(0xFF282F3E),
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ],
+              child: IntrinsicHeight(
+                child: Row(
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        CircleAvatar(
+                          radius: Dimensions.width30,
+                          backgroundImage: AssetImage(feedBack[index]['imagePaths']),
                         ),
-                      )
-                    ],
-                  )
-                ],
+                      ],
+                    ),
+                    SizedBox(
+                      width: Dimensions.width10,
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            feedBack[index]['username'],
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.getFont(
+                              'Plus Jakarta Sans',
+                              fontSize: Dimensions.font14,
+                              color: Color(0xFF404653),
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          Text(
+                            feedBack[index]['time'],
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.getFont(
+                              'Plus Jakarta Sans',
+                              fontSize: Dimensions.font12,
+                              color: Color(0xFF9FA3A9),
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          Text(
+                            feedBack[index]['feedback'],
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: GoogleFonts.getFont(
+                              'Plus Jakarta Sans',
+                              fontSize: Dimensions.font14,
+                              color: Color(0xFF282F3E),
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             );
           },
@@ -469,175 +472,178 @@ class OverviewTabPage extends StatelessWidget {
           itemBuilder: (context, index) {
             return Container(
               margin: EdgeInsets.only(bottom: Dimensions.height20),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      CircleAvatar(
-                        radius: Dimensions.width30,
-                        backgroundImage: AssetImage(
-                          comment[index]['imagePaths']
+              child:  IntrinsicHeight(
+                child: Row(
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        CircleAvatar(
+                          radius: Dimensions.width30,
+                          backgroundImage: AssetImage(
+                            comment[index]['imagePaths']
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        width: Dimensions.width10,
-                      ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              comment[index]['username'],
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.getFont(
-                                'Plus Jakarta Sans',
-                                fontSize: Dimensions.font14,
-                                color: Color(0xFF404653),
-                                fontWeight: FontWeight.w400,
+                      ],
+                    ),
+                    SizedBox(
+                      width: Dimensions.width10,
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            comment[index]['username'],
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.getFont(
+                              'Plus Jakarta Sans',
+                              fontSize: Dimensions.font14,
+                              color: Color(0xFF404653),
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(
+                            height: Dimensions.height10 / 2,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                comment[index]['time'],
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.getFont(
+                                  'Plus Jakarta Sans',
+                                  fontSize: Dimensions.font12,
+                                  color: Color(0xFF9FA3A9),
+                                  fontWeight: FontWeight.w400,
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              height: Dimensions.height10 / 2,
-                            ),
-                            Row(
-                              children: [
-                                Text(
-                                  comment[index]['time'],
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.getFont(
-                                    'Plus Jakarta Sans',
-                                    fontSize: Dimensions.font12,
-                                    color: Color(0xFF9FA3A9),
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: Dimensions.width10,
-                                ),
-                                Text(
-                                  comment[index]['role'],
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.getFont(
-                                    'Plus Jakarta Sans',
-                                    fontSize: Dimensions.font12,
-                                    color: Color(0xFF9FA3A9),
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: Dimensions.height10 / 2,
-                            ),
-                            Text(
-                              comment[index]['comment'],
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: GoogleFonts.getFont(
-                                'Plus Jakarta Sans',
-                                fontSize: Dimensions.font14,
-                                color: Color(0xFF282F3E),
-                                fontWeight: FontWeight.w400,
+                              SizedBox(
+                                width: Dimensions.width10,
                               ),
+                              Text(
+                                comment[index]['role'],
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.getFont(
+                                  'Plus Jakarta Sans',
+                                  fontSize: Dimensions.font12,
+                                  color: Color(0xFF9FA3A9),
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: Dimensions.height10 / 2,
+                          ),
+                          Text(
+                            comment[index]['comment'],
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: GoogleFonts.getFont(
+                              'Plus Jakarta Sans',
+                              fontSize: Dimensions.font14,
+                              color: Color(0xFF282F3E),
+                              fontWeight: FontWeight.w400,
                             ),
-                            SizedBox(
-                              height: Dimensions.height10,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Text(
-                                      'Liked',
+                          ),
+                          SizedBox(
+                            height: Dimensions.height10,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Text(
+                                    'Liked',
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.getFont(
+                                      'Plus Jakarta Sans',
+                                      fontSize: Dimensions.font14,
+                                      color: Color(0xFF265AE8),
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: Dimensions.width10,
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => ReplyCommentPage()),
+                                      );
+                                    },
+                                    child: Text(
+                                      'Reply',
                                       textAlign: TextAlign.center,
                                       style: GoogleFonts.getFont(
                                         'Plus Jakarta Sans',
                                         fontSize: Dimensions.font14,
-                                        color: Color(0xFF265AE8),
+                                        color: Color(0xFF585D69),
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
-                                    SizedBox(
-                                      width: Dimensions.width10,
-                                    ),
-                                    GestureDetector(
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(builder: (context) => ReplyCommentPage()),
-                                        );
-                                      },
-                                      child: Text(
-                                        'Reply',
-                                        textAlign: TextAlign.center,
-                                        style: GoogleFonts.getFont(
-                                          'Plus Jakarta Sans',
-                                          fontSize: Dimensions.font14,
-                                          color: Color(0xFF585D69),
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      IconsaxOutline.like_1,
-                                      size: Dimensions.font16,
-                                      color: Color(0xFF265AE8),
-                                    ),
-                                    SizedBox(
-                                      width: Dimensions.width10,
-                                    ),
-                                    Text(
-                                      '21',
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.getFont(
-                                        'Plus Jakarta Sans',
-                                        fontSize: Dimensions.font12,
-                                        color: Color(0xFF265AE8),
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: Dimensions.height10,
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => ReplyCommentPage()),
-                                );
-                              },
-                              child: Container(
-                                margin: EdgeInsets.only(
-                                  left: Dimensions.width10,
-                                ),
-                                child: Text(
-                                  'view 1 replies',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.getFont(
-                                    'Plus Jakarta Sans',
-                                    fontSize: Dimensions.font14,
-                                    color: Color(0xFF265AE8),
-                                    fontWeight: FontWeight.w600,
                                   ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    IconsaxOutline.like_1,
+                                    size: Dimensions.font16,
+                                    color: Color(0xFF265AE8),
+                                  ),
+                                  SizedBox(
+                                    width: Dimensions.width10,
+                                  ),
+                                  Text(
+                                    '21',
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.getFont(
+                                      'Plus Jakarta Sans',
+                                      fontSize: Dimensions.font12,
+                                      color: Color(0xFF265AE8),
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: Dimensions.height10,
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => ReplyCommentPage()),
+                              );
+                            },
+                            child: Container(
+                              margin: EdgeInsets.only(
+                                left: Dimensions.width10,
+                              ),
+                              child: Text(
+                                'view 1 replies',
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.getFont(
+                                  'Plus Jakarta Sans',
+                                  fontSize: Dimensions.font14,
+                                  color: Color(0xFF265AE8),
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
                             ),
-                          ],
-                        ),
-                      )
-                    ],
-                  )
-                ],
-              ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              )
             );
           },
         ),

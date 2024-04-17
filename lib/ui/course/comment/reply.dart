@@ -149,161 +149,164 @@ class _ReplyCommentPageState extends State<ReplyCommentPage> {
                     itemBuilder: (context, index) {
                       return Container(
                         margin: EdgeInsets.only(bottom: Dimensions.height20),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                CircleAvatar(
-                                  radius: Dimensions.width30,
-                                  backgroundImage: AssetImage(replyComment[index]['imagePaths']),
-                                ),
-                                SizedBox(
-                                  width: Dimensions.width10,
-                                ),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Text(
-                                            replyComment[index]['username'],
-                                            textAlign: TextAlign.center,
-                                            style: GoogleFonts.getFont(
-                                              'Plus Jakarta Sans',
-                                              fontSize: Dimensions.font14,
-                                              color: Color(0xFF404653),
-                                              fontWeight: FontWeight.w400,
-                                            ),
+                        child: IntrinsicHeight(
+                          child: Row(
+                            children: [
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  CircleAvatar(
+                                    radius: Dimensions.width30,
+                                    backgroundImage: AssetImage(replyComment[index]['imagePaths']),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                width: Dimensions.width10,
+                              ),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Text(
+                                          replyComment[index]['username'],
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.getFont(
+                                            'Plus Jakarta Sans',
+                                            fontSize: Dimensions.font14,
+                                            color: Color(0xFF404653),
+                                            fontWeight: FontWeight.w400,
                                           ),
-                                          SizedBox(
-                                            width: Dimensions.width30,
-                                          ),
-                                          replyComment[index]['role'] == 'teacher'
-                                              ? Container(
-                                                  width: Dimensions.width10 * 6,
-                                                  height: Dimensions.height10 * 2,
-                                                  decoration: BoxDecoration(
-                                                    borderRadius: BorderRadius.circular(3),
-                                                    color: Color(0xFFF97066),
-                                                  ),
-                                                  child: Padding(
-                                                    padding: EdgeInsets.only(
-                                                      top: 1,
-                                                      bottom: 1,
-                                                    ),
-                                                    child: Text(
-                                                      replyComment[index]['role'],
-                                                      textAlign: TextAlign.center,
-                                                      style: GoogleFonts.getFont(
-                                                        'Plus Jakarta Sans',
-                                                        fontSize: Dimensions.font12,
-                                                        color: Colors.white,
-                                                        fontWeight: FontWeight.w400,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                )
-                                              : SizedBox()
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: Dimensions.height10 / 2,
-                                      ),
-                                      Row(
-                                        children: [
-                                          Text(
-                                            replyComment[index]['time'],
-                                            textAlign: TextAlign.center,
-                                            style: GoogleFonts.getFont(
-                                              'Plus Jakarta Sans',
-                                              fontSize: Dimensions.font12,
-                                              color: Color(0xFF9FA3A9),
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            width: Dimensions.width10,
-                                          ),
-                                          replyComment[index]['role'] == 'student'
-                                              ? Text(
-                                                  replyComment[index]['role'],
-                                                  textAlign: TextAlign.center,
-                                                  style: GoogleFonts.getFont(
-                                                    'Plus Jakarta Sans',
-                                                    fontSize: Dimensions.font12,
-                                                    color: Color(0xFF9FA3A9),
-                                                    fontWeight: FontWeight.w400,
-                                                  ),
-                                                )
-                                              : SizedBox()
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: Dimensions.height10 / 2,
-                                      ),
-                                      Text(
-                                        replyComment[index]['comment'],
-                                        style: GoogleFonts.getFont(
-                                          'Plus Jakarta Sans',
-                                          fontSize: Dimensions.font14,
-                                          color: Color(0xFF282F3E),
-                                          fontWeight: FontWeight.w400,
                                         ),
-                                      ),
-                                      SizedBox(
-                                        height: Dimensions.height10,
-                                      ),
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Row(
-                                            children: [
-                                              Text(
-                                                'Liked',
-                                                textAlign: TextAlign.center,
-                                                style: GoogleFonts.getFont(
-                                                  'Plus Jakarta Sans',
-                                                  fontSize: Dimensions.font14,
-                                                  color: Color(0xFF265AE8),
-                                                  fontWeight: FontWeight.w400,
+                                        SizedBox(
+                                          width: Dimensions.width30,
+                                        ),
+                                        replyComment[index]['role'] == 'teacher'
+                                            ? Container(
+                                                width: Dimensions.width10 * 6,
+                                                height: Dimensions.height10 * 2,
+                                                decoration: BoxDecoration(
+                                                  borderRadius: BorderRadius.circular(3),
+                                                  color: Color(0xFFF97066),
                                                 ),
-                                              ),
-                                            ],
+                                                child: Padding(
+                                                  padding: EdgeInsets.only(
+                                                    top: 1,
+                                                    bottom: 1,
+                                                  ),
+                                                  child: Text(
+                                                    replyComment[index]['role'],
+                                                    textAlign: TextAlign.center,
+                                                    style: GoogleFonts.getFont(
+                                                      'Plus Jakarta Sans',
+                                                      fontSize: Dimensions.font12,
+                                                      color: Colors.white,
+                                                      fontWeight: FontWeight.w400,
+                                                    ),
+                                                  ),
+                                                ),
+                                              )
+                                            : SizedBox()
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: Dimensions.height10 / 2,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          replyComment[index]['time'],
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.getFont(
+                                            'Plus Jakarta Sans',
+                                            fontSize: Dimensions.font12,
+                                            color: Color(0xFF9FA3A9),
+                                            fontWeight: FontWeight.w400,
                                           ),
-                                          Row(
-                                            children: [
-                                              Icon(
-                                                IconsaxOutline.like_1,
-                                                size: Dimensions.font16,
-                                                color: Color(0xFF265AE8),
-                                              ),
-                                              SizedBox(
-                                                width: Dimensions.width10,
-                                              ),
-                                              Text(
-                                                '21',
+                                        ),
+                                        SizedBox(
+                                          width: Dimensions.width10,
+                                        ),
+                                        replyComment[index]['role'] == 'student'
+                                            ? Text(
+                                                replyComment[index]['role'],
                                                 textAlign: TextAlign.center,
                                                 style: GoogleFonts.getFont(
                                                   'Plus Jakarta Sans',
                                                   fontSize: Dimensions.font12,
-                                                  color: Color(0xFF265AE8),
+                                                  color: Color(0xFF9FA3A9),
                                                   fontWeight: FontWeight.w400,
                                                 ),
+                                              )
+                                            : SizedBox()
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: Dimensions.height10 / 2,
+                                    ),
+                                    Text(
+                                      replyComment[index]['comment'],
+                                      style: GoogleFonts.getFont(
+                                        'Plus Jakarta Sans',
+                                        fontSize: Dimensions.font14,
+                                        color: Color(0xFF282F3E),
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: Dimensions.height10,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Text(
+                                              'Liked',
+                                              textAlign: TextAlign.center,
+                                              style: GoogleFonts.getFont(
+                                                'Plus Jakarta Sans',
+                                                fontSize: Dimensions.font14,
+                                                color: Color(0xFF265AE8),
+                                                fontWeight: FontWeight.w400,
                                               ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: Dimensions.height10,
-                                      ),
-                                    ],
-                                  ),
-                                )
-                              ],
-                            )
-                          ],
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Icon(
+                                              IconsaxOutline.like_1,
+                                              size: Dimensions.font16,
+                                              color: Color(0xFF265AE8),
+                                            ),
+                                            SizedBox(
+                                              width: Dimensions.width10,
+                                            ),
+                                            Text(
+                                              '21',
+                                              textAlign: TextAlign.center,
+                                              style: GoogleFonts.getFont(
+                                                'Plus Jakarta Sans',
+                                                fontSize: Dimensions.font12,
+                                                color: Color(0xFF265AE8),
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: Dimensions.height10,
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       );
                     },
