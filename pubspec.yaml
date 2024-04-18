@@ -44,6 +44,8 @@ dependencies:
   flick_video_player: ^0.7.0
   video_player: ^2.8.6
   autoscale_tabbarview: ^1.0.2
+  image_picker: ^1.1.0
+  fluttertoast: ^8.2.5
 
 dev_dependencies:
   flutter_test:

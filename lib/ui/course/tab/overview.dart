@@ -1,4 +1,6 @@
 import 'package:educo/ui/course/comment/reply.dart';
+import 'package:educo/ui/course/project/add.dart';
+import 'package:educo/ui/course/project/project.dart';
 import 'package:educo/utils/dimensions.dart';
 import 'package:ficonsax/ficonsax.dart';
 import 'package:flutter/cupertino.dart';
@@ -346,22 +348,30 @@ class OverviewTabPage extends StatelessWidget {
                 fontWeight: FontWeight.w700,
               ),
             ),
-            Container(
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(4), color: Color(0xFFEDEEF0)),
-              child: Padding(
-                padding: EdgeInsets.only(
-                    top: Dimensions.height10,
-                    bottom: Dimensions.height10,
-                    left: Dimensions.width20,
-                    right: Dimensions.width20),
-                child: Text(
-                  'Add Project',
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.getFont(
-                    'Plus Jakarta Sans',
-                    fontSize: Dimensions.font14,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w600,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AddProjectPage()),
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(4), color: Color(0xFFEDEEF0)),
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      top: Dimensions.height10,
+                      bottom: Dimensions.height10,
+                      left: Dimensions.width20,
+                      right: Dimensions.width20),
+                  child: Text(
+                    'Add Project',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.getFont(
+                      'Plus Jakarta Sans',
+                      fontSize: Dimensions.font14,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
               ),
@@ -382,16 +392,24 @@ class OverviewTabPage extends StatelessWidget {
           ),
           itemBuilder: (context, index) {
             return GridTile(
-              child: Container(
-                height: Dimensions.height10 * 21.6,
-                width: Dimensions.width10 * 16.2,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6),
-                ),
-                clipBehavior: Clip.antiAlias,
-                child: Image.asset(
-                  project[index]['imagePaths'],
-                  fit: BoxFit.cover,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CourseProjectPage()),
+                  );
+                },
+                child: Container(
+                  height: Dimensions.height10 * 21.6,
+                  width: Dimensions.width10 * 16.2,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  clipBehavior: Clip.antiAlias,
+                  child: Image.asset(
+                    project[index]['imagePaths'],
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             );

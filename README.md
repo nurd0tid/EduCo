@@ -25,12 +25,6 @@ flutter run
 
 For a complete design preview, and how i can create it, you can see it here :
 
-#### 1. [Part 1](https://www.youtube.com/watch?v=05pp4_nf7tE)
-#### 2. [Part 2](https://youtube.com/live/w0GkS9uB1-A)
-#### 3. [Part 3](https://youtube.com/live/smJclMEF2Is)
-#### 4. [Part 4](https://www.youtube.com/live/oI0kxxEDyKA)
-#### 5. [Part 5](https://youtube.com/live/OSYzQQBfmNg)
-#### 6. [Part 6](https://www.youtube.com/watch?v=JdByioXhWTk)
-#### 7. [Part 7](https://www.youtube.com/watch?v=M5eKYsiwH5o)
+#### [EduCo Playlist](https://www.youtube.com/watch?v=05pp4_nf7tE&list=PLK3KqWHQ8b1FbsqYi5bk7AQT2E-CRpg0-)
 
 i hope you enjoy seeing it, don't  forget to subscribe, and follow my github 😁
