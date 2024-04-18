@@ -14,14 +14,7 @@ flutter run
 
 #### Preview Layout
 
-1. ##### Onboarding & Sign up process
-![image](https://github.com/nurd0tid/EduCo/assets/48532204/6f3dc646-ae7a-454a-bb78-ff8c3e0fc436)
-
-![image](https://github.com/nurd0tid/EduCo/assets/48532204/cce66f7e-1009-419b-89b8-08ef39b00a26)
-
-2. ##### Forgot Password
-![image](https://github.com/nurd0tid/EduCo/assets/48532204/17295771-77ec-4962-8e14-80bee23c24a4)
-
+![2024-04-1812-16-13-ezgif com-video-to-gif-converter](https://github.com/nurd0tid/EduCo/assets/48532204/47451592-095c-4470-94cc-cde3eb91b2cb)
 
 For a complete design preview, and how i can create it, you can see it here :
 
